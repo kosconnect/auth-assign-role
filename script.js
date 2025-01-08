@@ -1,3 +1,6 @@
+// Mendeklarasikan email dengan let agar bisa diubah
+let email = "";
+
 // Fungsi untuk menetapkan role
 const assignRole = async (role) => {
     if (!email) {
