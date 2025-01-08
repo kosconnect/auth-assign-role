@@ -26,7 +26,13 @@ const assignRole = async (role) => {
         throw new Error(errorData.error || "Gagal mengatur role.");
       }
       // Tampilkan notifikasi keberhasilan
-      alert("Role berhasil diatur. Silakan login ulang untuk melanjutkan.");
+      alert("Role berhasil diatur. Anda sekarang masuk sebagai " + data.role);
+      // Alihkan pengguna berdasarkan role
+      if (result.role === "user") {
+        window.location.href = "https://kosconnect.github.io/";
+      } else if (result.role === "owner") {
+        window.location.href = "https://kosconnect.github.io/dashboard-owner";
+      }
     } catch (error) {
       console.error("Error assigning role:", error);
       alert("Terjadi kesalahan saat mengatur role.");
