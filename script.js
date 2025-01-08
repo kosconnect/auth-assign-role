@@ -25,12 +25,14 @@ const assignRole = async (role) => {
         const errorData = await response.json();
         throw new Error(errorData.error || "Gagal mengatur role.");
       }
-      // Tampilkan notifikasi keberhasilan
-      alert("Role berhasil diatur. Anda sekarang masuk sebagai " + data.role);
+  
+      // Tampilkan notifikasi keberhasilan dengan role yang dipilih
+      alert("Role berhasil diatur. Anda sekarang masuk sebagai " + (role === "user" ? "Pencari Kos" : "Pemilik Kos"));
+      
       // Alihkan pengguna berdasarkan role
-      if (result.role === "user") {
+      if (role === "user") {
         window.location.href = "https://kosconnect.github.io/";
-      } else if (result.role === "owner") {
+      } else if (role === "owner") {
         window.location.href = "https://kosconnect.github.io/dashboard-owner";
       }
     } catch (error) {
