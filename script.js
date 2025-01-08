@@ -28,7 +28,7 @@ const assignRole = async (role) => {
 
     // Redirect ke halaman /auth
     alert("Role berhasil diatur. Anda akan diarahkan kembali.");
-    window.location.href = "https://kosconnect.github.io/auth/";
+    window.location.href = "https://kosconnect-server.vercel.app/auth/callback";
   } catch (error) {
     console.error("Error assigning role:", error);
     alert("Terjadi kesalahan saat mengatur role.");
